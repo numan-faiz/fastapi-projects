@@ -1,0 +1,10 @@
+fastapi==0.68.1
+starlette==0.14.2
+pydantic==1.8.2
+typing-extensions>=4.0.0
+asgiref==3.4.1
+click==8.0.1
+colorama==0.4.4
+SQLAlchemy==1.4.23
+psycopg2-binary>=2.9.9
+SQLAlchemy_utils==0.37.8
