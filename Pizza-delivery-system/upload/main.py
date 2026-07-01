@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from auth_routes import auth_router
 from order_routes import order_router
-from fastapi_jwt_auth import AuthJWT
+from jwt_helper import AuthJWT
 from fastapi.responses import RedirectResponse
 from schemas import Settings
 import inspect, re

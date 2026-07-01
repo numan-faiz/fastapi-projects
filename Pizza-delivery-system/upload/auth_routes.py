@@ -5,7 +5,7 @@ from schemas import SignUpModel,LoginModel
 from models import User
 from fastapi.exceptions import HTTPException
 from werkzeug.security import generate_password_hash , check_password_hash
-from fastapi_jwt_auth import AuthJWT
+from jwt_helper import AuthJWT
 from fastapi.encoders import jsonable_encoder
 from sqlalchemy import func, or_
 from sqlalchemy.orm import Session

@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from typing import Optional
 
 
@@ -11,10 +11,9 @@ class SignUpModel(BaseModel):
     is_staff:Optional[bool]
     is_active:Optional[bool]
 
-
-    class Config:
-        orm_mode=True
-        schema_extra={
+    model_config = ConfigDict(
+        from_attributes=True,
+        json_schema_extra={
             'example':{
                 "name":"John Doe",
                 "username":"johndoe",
@@ -24,7 +23,7 @@ class SignUpModel(BaseModel):
                 "is_active":True
             }
         }
-
+    )
 
 
 class Settings(BaseModel):
@@ -44,24 +43,25 @@ class OrderModel(BaseModel):
     pizza_size:Optional[str]="SMALL"
     user_id:Optional[int]
 
-
-    class Config:
-        orm_mode=True
-        schema_extra={
+    model_config = ConfigDict(
+        from_attributes=True,
+        json_schema_extra={
             "example":{
                 "quantity":2,
                 "pizza_size":"LARGE"
             }
         }
+    )
 
 
 class OrderStatusModel(BaseModel):
     order_status:Optional[str]="PENDING"
 
-    class Config:
-        orm_mode=True
-        schema_extra={
+    model_config = ConfigDict(
+        from_attributes=True,
+        json_schema_extra={
             "example":{
                 "order_status":"PENDING"
             }
         }
+    )
